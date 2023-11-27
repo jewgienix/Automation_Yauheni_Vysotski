@@ -14,12 +14,12 @@ public class GoogleSearchTest {
     private WebDriver driver;
 
     @BeforeTest
-    public void setUp(){
+    public void setUp() {
         driver = new ChromeDriver();
     }
 
     @Test(priority = 1)
-    public void GoogleSearchPositiveTest(){
+    public void GoogleSearchPositiveTest() {
         driver.get("https://www.google.by/");
         WebElement continueButton = driver.findElement(By.id("L2AGLb"));
         continueButton.click();
@@ -29,8 +29,9 @@ public class GoogleSearchTest {
         WebElement positiveResult = driver.findElement(By.id("result-stats"));
         Assert.assertTrue(positiveResult.isDisplayed());
     }
+
     @Test(priority = 2)
-    public void GoogleSearchNegativeTest(){
+    public void GoogleSearchNegativeTest() {
         driver.get("https://google.by/");
         WebElement continueButton = driver.findElement(By.id("L2AGLb"));
         continueButton.click();
@@ -40,11 +41,11 @@ public class GoogleSearchTest {
         WebElement negativeResult = driver.findElement(By.cssSelector("[style='margin-top:1em']"));
         Assert.assertTrue(negativeResult.isDisplayed());
     }
+
     @AfterTest
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
-
 
 
 }
