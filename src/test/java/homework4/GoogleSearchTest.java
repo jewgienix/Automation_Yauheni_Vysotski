@@ -1,4 +1,4 @@
-package homewrork4;
+package homework4;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
