@@ -9,7 +9,7 @@ import static driver.DriverTypes.CHROME;
 
 public abstract class BaseTest {
     @BeforeTest
-    protected void setUp(){
+    protected void setUp() {
         createDriver(CHROME);
     }
 
