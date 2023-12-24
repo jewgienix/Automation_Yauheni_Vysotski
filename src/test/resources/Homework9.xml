@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SaudedemoTests">
+    <parameter name="url" value="https://www.saucedemo.com"/>
+    <test name="SaucedemoTests">
+        <classes>
+            <class name="homework9.SaucedemoTests"></class>
+        </classes>
+    </test>
+</suite>
