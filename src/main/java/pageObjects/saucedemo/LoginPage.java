@@ -44,7 +44,6 @@ public class LoginPage extends BasePage {
         sendKeys(this.password, password);
     }
     public void clickLogin(){
-
         click(login);
     }
     public void clickMenuButton(){
