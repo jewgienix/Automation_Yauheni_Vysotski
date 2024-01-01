@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.herokuapp.DynamicControlsPage;
 import pageObjects.herokuapp.FramesPage;
-import pageObjects.herokuapp.HomePage;
+import pageObjects.herokuapp.home.HomePage;
 
 import static pageObjects.herokuapp.HomePageItems.DYNAMIC_CONTROLS;
 import static pageObjects.herokuapp.HomePageItems.FRAMES;
