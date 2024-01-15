@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -13,12 +14,12 @@ import static driver.DriverCreation.getDriver;
 
 public abstract class BasePage {
     protected WebDriver driver;
-    protected WebDriverWait wait;
+    public WebDriverWait wait;
     protected Actions actions;
 
     {
         driver = getDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10), Duration.ofSeconds(1));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         actions = new Actions(driver);
 
     }
@@ -29,10 +30,12 @@ public abstract class BasePage {
     }
 
     protected void click(By by) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         click(driver.findElement(by));
     }
 
     protected void click(WebElement element) {
+        wait.until(ExpectedConditions.elementToBeClickable(element));
         System.out.println("Click on element :: " + element);
         element.click();
     }

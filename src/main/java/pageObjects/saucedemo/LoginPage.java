@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static driver.DriverCreation.getDriver;
+import static propertyUtils.PropertyReader.getProperties;
 
 public class LoginPage extends BasePage {
     private final WebDriver driver;
@@ -43,7 +44,6 @@ public class LoginPage extends BasePage {
         sendKeys(this.password, password);
     }
     public void clickLogin(){
-
         click(login);
     }
     public void clickMenuButton(){
@@ -62,5 +62,14 @@ public class LoginPage extends BasePage {
         return Arrays.stream(driver.findElement(passwordCredentials).getText().split("\n"))
                 .filter(value -> !value.contains("Password for all users"))
                 .findFirst().orElse("");
+    }
+    public void open() {
+        getDriver().get(getProperties().getProperty("url"));
+    }
+    public void enterUsername() {
+        sendKeys(this.username, getProperties().getProperty("username"));
+    }
+    public void enterPassword() {
+        sendKeys(this.password, getProperties().getProperty("password"));
     }
 }
